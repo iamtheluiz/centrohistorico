@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Centro Histórico de Santos</title>
+    <!-- Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- CSS Geral -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Include of the Navbar -->
+    <div w3-include-html="navbar.html"></div>
+
+    <!-- Page content -->
+    <div class="container">
+        <section id="header">
+            <div id="slider"></div>
+            <a class="ct-btn-scroll ct-js-btn-scroll" href="#sections"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
+        </section>
+        <section id="sections">
+            <h1>Seções</h1>
+            <div class="carousel">
+                <a class="carousel-item center-align" href="#one!">
+                    <i class="material-icons large">map</i>
+                    <h4>Mapa</h4>
+                </a>
+                <a class="carousel-item center-align" href="#two!">
+                    <i class="material-icons large">account_balance</i>
+                    <h4>Prédios</h4>
+                </a>
+                <a class="carousel-item center-align" href="#three!">
+                    <i class="material-icons large">public</i>
+                    <h4>Visita</h4>
+                </a>
+                <a class="carousel-item center-align" href="#four!">
+                    <i class="material-icons large">pie_chart</i>
+                    <h4>Estatísticas</h4>
+                </a>
+                <a class="carousel-item center-align" href="#five!">
+                    <i class="material-icons large">photo_library</i>
+                    <h4>Galeria</h4>
+                </a>
+            </div>
+        </section>
+    </div>
+    <!-- End of page content -->
+
+    <!-- Scripts -->
+    <!-- W3Data -->
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    <!-- Jquery 3.4.1 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        w3IncludeHTML();
+        $(document).ready(function(){
+            //Inicializar o carrosel
+            $('.carousel').carousel({
+                fullWidth: false,
+                padding: 150,
+                dist: -70
+            });
+
+            //Controle do scroll
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                } 
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/* CSS Geral */
+html{
+    background-color: #000;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 100vw !important;
+    max-width: none !important;
+    padding:0px;
+    margin:0px;
+}
+nav#main-menu{
+    background-color: #000000ba;
+    position: absolute;
+}
+nav#main-menu ul a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.brand-logo img{
+    height: 60px !important;
+}
+section{
+    width: 100%;
+}
+#sections{
+    background-color: white;
+    padding: 20px;
+    padding-top: 10px;
+}
+#sections h1{
+    margin-top: 15px;
+    text-align: center;
+}
+#sections .carousel{
+    height: 200px;
+    margin: 0 auto !important;
+}
+#sections .carousel p, #sections .carousel i{
+    color: black !important;
+}
+#sections .carousel i{
+    font-size: 10rem;
+}
+#sections .carousel h4{
+    color: black;
+    margin-top: 0px;
+}
+/* Slider configuration */
+#slider{
+    width: 100vw;
+    margin: 0px;
+    height: 100vh;
+    background-image: url('../images/bondinhoSlider.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+}
+.ct-btn-scroll {
+    width: 49px;
+    height: 49px;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 9;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.25s ease-in-out;
+    transition: background-color 0.25s ease-in-out;
+}
+@media only screen and (max-width: 425px){
+    #slider{
+        background-size: auto 100%;
+    }
+}
