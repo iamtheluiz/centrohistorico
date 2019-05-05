@@ -1,0 +1,37 @@
+{
+    "name": "Centro Histórico - Santos",
+    "short_name": "C.H. Santos",
+    "icons": [{
+      "src": "favicon.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      }, {
+        "src": "favicon.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }, {
+        "src": "favicon.png",
+        "sizes": "152x152",
+        "type": "image/png"
+      }, {
+        "src": "favicon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }, {
+        "src": "favicon.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }, {
+        "src": "favicon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }],
+    "author": {
+      "name": "Luiz Gustavo da Silva Vasconcellos",
+      "github": "https://github.com/iamtheluiz"
+    },
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#000",
+    "theme_color": "#000"
+  }
