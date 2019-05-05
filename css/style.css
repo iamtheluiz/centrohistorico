@@ -105,6 +105,14 @@ section{
     .brand-logo img{
         height: 54px !important;
     }
+    #title{
+        padding-top: calc(100vh / 2 - 100px);
+    }
+    #info{
+        padding:2px;
+        padding-top:20px;
+        padding-bottom:20px;
+    }
 }
 
 /* Scroll */
