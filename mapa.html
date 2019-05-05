@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapa | Centro Histórico de Santos</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000">
+    <meta name="description" content="Site sobre o centro histórico de Santos">
+    <meta name="keywords" content="Centro,Histórico,Santos,Hitória,Café,Museu,Teatro">
+    <meta name="author" content="Luiz Gustavo da Silva Vasconcellos">
+    <!-- Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- CSS Geral -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Page content -->
+    <div class="container">
+        <!-- Include of the Navbar -->
+        <div w3-include-html="navbar.html"></div>
+
+        <section id="mapa" class="row">
+            <div class="col s12 white">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2358.3122404760493!2d-46.32988734747602!3d-23.93288747838997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeeb033433df8c9db!2sCentro+Historico+De+Santos-SP!5e1!3m2!1spt-BR!2sbr!4v1557029163068!5m2!1spt-BR!2sbr" width="100%" style="height: 95vh" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Include of the footer -->
+        <div w3-include-html="footer.html"></div>
+    </div>
+    <!-- End of page content -->
+
+    <!-- Scripts -->
+    <!-- W3Data -->
+    <script src="https://www.w3schools.com/lib/w3data.js"></script>
+    <!-- Jquery 3.4.1 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        w3IncludeHTML();
+        $(document).ready(function(){
+            //Iniciar Menu
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
+</html>

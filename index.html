@@ -39,7 +39,7 @@
         <section id="sections">
             <h1>Seções</h1>
             <div class="carousel">
-                <a class="carousel-item center-align" href="#one!">
+                <a class="carousel-item center-align" href="mapa.html#mapa">
                     <i class="material-icons large">map</i>
                     <h4>Mapa</h4>
                 </a>
@@ -47,7 +47,7 @@
                     <i class="material-icons large">account_balance</i>
                     <h4>Prédios</h4>
                 </a>
-                <a class="carousel-item center-align" href="#three!">
+                <a class="carousel-item center-align" href="visita.html">
                     <i class="material-icons large">public</i>
                     <h4>Visita</h4>
                 </a>
@@ -98,7 +98,7 @@
             });
 
             //Controle do scroll
-            $("a").on('click', function(event) {
+            $(".ct-btn-scroll").on('click', function(event) {
                 if (this.hash !== "") {
                     event.preventDefault();
                     var hash = this.hash;

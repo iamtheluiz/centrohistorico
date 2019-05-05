@@ -96,6 +96,16 @@ section{
     -webkit-transition: background-color 0.25s ease-in-out;
     transition: background-color 0.25s ease-in-out;
 }
+#mapa{
+    padding-top: 64px !important;
+    margin: 0px !important;
+}
+#mapa > div{
+    padding: 20px !important;
+}
+footer{
+    padding-top: 0px !important;
+}
 @media only screen and (max-width: 425px){
     #title{
         padding-top: calc(100vh / 2 - 100px);
