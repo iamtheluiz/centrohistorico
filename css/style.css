@@ -1,11 +1,13 @@
 /* CSS Geral */
 html{
+    width: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
     background-color: #000;
-    overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
 .container{
-    width: 100vw !important;
+    width: 100% !important;
     max-width: none !important;
     padding:0px;
     margin:0px;
@@ -35,6 +37,7 @@ section{
 #sections .carousel{
     height: 200px;
     margin: 0 auto !important;
+    user-select: none;
 }
 #sections .carousel p, #sections .carousel i{
     color: black !important;
@@ -46,9 +49,26 @@ section{
     color: black;
     margin-top: 0px;
 }
+#info{
+    padding: 30px;
+    width: 100%;
+    margin: 0px;
+    height: auto;
+    background-image: url('../images/cafefundo.jpg');
+    background-size: auto auto;
+}
+.box .box-header{
+    border-radius: 15px 15px 0px 0px;
+    background-color: #084208 !important;
+    color: #efefef;
+}
+.box .box-body{
+    border-radius: 0px 0px 15px 15px;
+    padding: 15px;
+}
 /* Slider configuration */
 #slider{
-    width: 100vw;
+    width: 100%;
     margin: 0px;
     height: 100vh;
     background-image: url('../images/bondinhoSlider.jpg');
@@ -56,6 +76,12 @@ section{
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-attachment: fixed;
+}
+#title{
+    padding-top: calc(100vh / 2 - 50px);
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px black;
 }
 .ct-btn-scroll {
     width: 49px;
@@ -74,4 +100,25 @@ section{
     #slider{
         background-size: auto 100%;
     }
+}
+@media only screen and (max-width: 601px){
+    .brand-logo img{
+        height: 54px !important;
+    }
+}
+
+/* Scroll */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #000000;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #CCC; 
 }
