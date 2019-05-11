@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Centro Histórico de Santos</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000">
+    <meta name="description" content="Site sobre o centro histórico de Santos">
+    <meta name="keywords" content="Centro,Histórico,Santos,Hitória,Café,Museu,Teatro">
+    <meta name="author" content="Luiz Gustavo da Silva Vasconcellos">
+    <!-- Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- CSS Geral -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Page content -->
+    <div class="container row white">
+        <!-- Include of the Navbar -->
+        <div w3-include-html="navbar.html"></div>
+
+        <section id="header">
+            <div id="slider" style="background-image: url('images/estacao.jpg');">
+                <div id="title">
+                    <h1 style="margin: 0px">Sobre</h1>
+                    <p>Profissionais que desenvolveram esse projeto</p>
+                </div>
+            </div>
+            <a class="ct-btn-scroll ct-js-btn-scroll" href="#empresa"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
+        </section>
+        <section id="empresa" class="col s12 white">
+            <div class="col s12 center-align">
+                <h2>Empresa</h2>
+                <div id="logo" class="col s10 m4 l4 offset-l4 offset-m4 offset-s1">
+                    <img alt="Logo da Empresa" style="width: 100%; border-radius: 100%" src="https://avatars2.githubusercontent.com/u/32724000?s=400&amp;u=ad8ed433ff9a3e50836fcd3f6ed419fdadf2c2c6&amp;v=4">
+                </div>
+                <div class="col s12 m6 l4 offset-l4 offset-m3">
+                    <p style="font-size: 14pt">A "Empresa" é uma empresa especializada na realização de projetos com soluções tecnológicas, prestando acessorias na área de engenharia com enfoque na computação.</p>
+                </div>
+            </div>
+        </section>
+        <section id="grupo" class="col s12 white">
+            <div style="text-align: center;">
+                <h3>Componentes</h3>
+            </div>
+            <div id="desenvolvedores" class="col l8 m10 s12 offset-l2 offset-m1">
+                <div class="col s6 m4 l4 offset-l4 offset-m4 offset-s3">
+                    <img alt="Luiz Gustavo" src="https://avatars2.githubusercontent.com/u/32724000?s=400&amp;u=ad8ed433ff9a3e50836fcd3f6ed419fdadf2c2c6&amp;v=4">
+                    <p class="nome center-align">Luiz Gustavo</p>
+                    <p class="titulo center-align">Desenvolvedor WEB</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Include of the footer -->
+        <div w3-include-html="footer.html"></div>
+    </div>
+    <!-- End of page content -->
+
+    <!-- Scripts -->
+    <!-- W3Data -->
+    <script src="https://www.w3schools.com/lib/w3data.js"></script>
+    <!-- Jquery 3.4.1 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        w3IncludeHTML();
+        $(document).ready(function(){
+            //Iniciar Menu
+            $('.sidenav').sidenav();
+
+            //Controle do scroll
+            $(".ct-btn-scroll").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                } 
+            });
+        });
+    </script>
+</body>
+</html>

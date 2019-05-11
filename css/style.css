@@ -25,6 +25,11 @@ nav#main-menu ul a:hover {
 section{
     width: 100%;
 }
+footer{
+    padding-top: 0px !important;
+}
+
+/* Index > Seções */
 #sections{
     background-color: white;
     padding: 20px;
@@ -49,6 +54,8 @@ section{
     color: black;
     margin-top: 0px;
 }
+
+/* Index > Informações */
 #info{
     padding: 30px;
     width: 100%;
@@ -66,7 +73,8 @@ section{
     border-radius: 0px 0px 15px 15px;
     padding: 15px;
 }
-/* Slider configuration */
+
+/* Configurações do "Slider" */
 #slider{
     width: 100%;
     margin: 0px;
@@ -75,14 +83,21 @@ section{
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-attachment: fixed;
 }
 #title{
     padding-top: calc(100vh / 2 - 50px);
     text-align: center;
     color: white;
+}
+#title h1{
     text-shadow: 3px 3px black;
 }
+#title p{
+    font-size: 12pt;
+    text-shadow: 1px 1px black;
+}
+
+/* Index > Botão do Slider */
 .ct-btn-scroll {
     width: 49px;
     height: 49px;
@@ -96,6 +111,8 @@ section{
     -webkit-transition: background-color 0.25s ease-in-out;
     transition: background-color 0.25s ease-in-out;
 }
+
+/* Mapa > Configurações do Mapa */
 #mapa{
     padding-top: 64px !important;
     margin: 0px !important;
@@ -103,17 +120,38 @@ section{
 #mapa > div{
     padding: 20px !important;
 }
-footer{
-    padding-top: 0px !important;
+
+/* Sobre > Desenvolvedores */
+#desenvolvedores{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+#desenvolvedores > div > img{
+    width: 90% !important;
+    margin-left: 5% !important;
+    border-radius: 100%;
+}
+#desenvolvedores > div > .nome{
+    font-size: 16pt;
+    margin: 0px;
+}
+#desenvolvedores > div > .titulo{
+    font-size: 11pt;
+    color: grey;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+/* Media Querys */
 @media only screen and (max-width: 425px){
     #title{
         padding-top: calc(100vh / 2 - 100px);
     }
-}
-@media only screen and (max-width: 782px){
-    #slider{
-        background-size: auto 100%;
+    #desenvolvedores > div > .nome{
+        font-size: 13pt;
+    }
+    #desenvolvedores > div > .titulo{
+        font-size: 9pt;
     }
 }
 @media only screen and (max-width: 601px){
@@ -124,6 +162,11 @@ footer{
         padding:2px;
         padding-top:20px;
         padding-bottom:20px;
+    }
+}
+@media only screen and (max-width: 782px){
+    #slider{
+        background-size: auto 100%;
     }
 }
 
