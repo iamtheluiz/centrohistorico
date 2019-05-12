@@ -27,6 +27,9 @@
         <!-- Include of the Navbar -->
         <div w3-include-html="navbar.html"></div>
 
+        <!-- Include of the "Back to Top Button" -->
+        <div w3-include-html="voltar_ao_topo.html"></div>
+
         <section id="header">
             <div id="slider">
                 <div id="title">
@@ -67,7 +70,7 @@
                     <h2>Informações</h2>
                 </div>
                 <div class="box-body col s12 white center-align">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium repellat maiores temporibus dicta facilis id atque nostrum. Deleniti iusto temporibus ea, impedit atque deserunt ex laboriosam nesciunt maiores alias voluptatum!</p>
+                    <p>O </p>
                 </div>
             </div>
         </section>
@@ -85,8 +88,9 @@
     <!--  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        w3IncludeHTML();
         $(document).ready(function(){
+            w3IncludeHTML();
+            
             //Iniciar Menu
             $('.sidenav').sidenav();
 
@@ -108,6 +112,15 @@
                         window.location.hash = hash;
                     });
                 } 
+            });
+
+            //Scroll Top
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 100) {
+                    $('#subirTopo').fadeIn();
+                } else {
+                    $('#subirTopo').fadeOut();
+                }
             });
         });
     </script>

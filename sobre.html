@@ -27,6 +27,9 @@
         <!-- Include of the Navbar -->
         <div w3-include-html="navbar.html"></div>
 
+        <!-- Include of the "Back to Top Button" -->
+        <div w3-include-html="voltar_ao_topo.html"></div>
+
         <section id="header">
             <div id="slider" style="background-image: url('images/estacao.jpg');">
                 <div id="title">
@@ -89,6 +92,15 @@
                         window.location.hash = hash;
                     });
                 } 
+            });
+
+            //Scroll Top
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 100) {
+                    $('#subirTopo').fadeIn();
+                } else {
+                    $('#subirTopo').fadeOut();
+                }
             });
         });
     </script>
