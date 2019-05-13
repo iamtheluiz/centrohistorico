@@ -19,6 +19,9 @@ nav#main-menu{
 nav#main-menu ul a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+.sidenav li a i{
+    margin-right: 10px !important;
+}
 .brand-logo img{
     height: 60px !important;
 }
