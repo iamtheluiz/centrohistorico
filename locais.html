@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Centro Histórico de Santos</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000">
+    <meta name="description" content="Site sobre o centro histórico de Santos">
+    <meta name="keywords" content="Centro,Histórico,Santos,Hitória,Café,Museu,Teatro">
+    <meta name="author" content="Luiz Gustavo da Silva Vasconcellos">
+    <!-- Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- CSS Geral -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Page content -->
+    <div class="container row white">
+        <!-- Include of the Navbar -->
+        <div w3-include-html="navbar.html"></div>
+
+        <!-- Include of the "Back to Top Button" -->
+        <div w3-include-html="voltar_ao_topo.html"></div>
+
+        <section id="header">
+            <div id="slider" style="background-image: url('images/bondinhoSlider.jpg');">
+                <div id="title">
+                    <h1 style="margin: 0px">Locais</h1>
+                    <p>Lugares para visitar no Centro Histórico</p>
+                </div>
+            </div>
+            <a class="ct-btn-scroll ct-js-btn-scroll" href="#lista"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
+        </section>
+        <section id="lista" class="col s12 white">
+            <div class="col s12 center-align">
+                <h2>Lista de Locais</h2>
+                <div class="carousel black-text">
+                    <a class="carousel-item center-align" href="mapa.html#mapa">
+                        <img src="https://media-cdn.tripadvisor.com/media/photo-s/04/94/d5/97/museu-do-cafe.jpg" alt="Bolsa do Café">
+                        <h4>Museu do Café</h4>
+                    </a>
+                    <a class="carousel-item center-align" href="locais.html">
+                        <img src="https://www.turismosantos.com.br/static/files_turismosantos/styles/lateral/public/FRANCISCO%20ARRAIS_9180.jpg?itok=TeMqz4AX" alt="Bondinho">
+                        <h4>Bondinho de Santos</h4>
+                    </a>
+                    <a class="carousel-item center-align" href="visita.html">
+                        <img src="http://s2.glbimg.com/qvW0fiZl-bHGOAbrpTQNgctY3XU=/620x465/s.glbimg.com/jo/g1/f/original/2013/06/29/isabela_carrari_4075.jpg" alt="Teatro Coliseu">
+                        <h4>Teatro Coliseu</h4>
+                    </a>
+                    <!-- Design Legal: https://mirada.sescsp.org.br/2014/pt/espaco/teatro-guarany/index.html -->
+                    <a class="carousel-item center-align" href="visita.html">
+                        <img src="https://mirada.sescsp.org.br/2014/pt/wp-content/uploads/2014/08/Teatro-Guarany-25_.jpg" alt="Teatro Guarany">
+                        <h4>Teatro Guarany</h4>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Include of the footer -->
+        <div w3-include-html="footer.html"></div>
+    </div>
+    <!-- End of page content -->
+
+    <!-- Scripts -->
+    <!-- W3Data -->
+    <script src="https://www.w3schools.com/lib/w3data.js"></script>
+    <!-- Jquery 3.4.1 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        w3IncludeHTML();
+        $(document).ready(function(){
+            //Iniciar Menu
+            $('.sidenav').sidenav();
+
+            //Inicializar o carrosel
+            $('.carousel').carousel({
+                fullWidth: false,
+                padding: 50,
+                dist: -20
+            });
+
+            //Controle do scroll
+            $(".ct-btn-scroll").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                } 
+            });
+
+            //Scroll Top
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 100) {
+                    $('#subirTopo').fadeIn();
+                } else {
+                    $('#subirTopo').fadeOut();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
