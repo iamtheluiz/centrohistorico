@@ -53,7 +53,7 @@ locais.forEach(local => {
     /* Coloca os locais na grade */
     //Cria a coluna que vai conter o conteúdo
     var col = document.createElement("a");
-    col.setAttribute("class", "col s6 m6 l3 center-align");
+    col.setAttribute("class", "col s12 m6 l3 center-align");
     col.setAttribute("href", local.link);
 
     //Define a imagem
