@@ -131,6 +131,7 @@ footer{
 #desenvolvedores{
     padding-top: 10px;
     padding-bottom: 10px;
+    user-select: none;
 }
 #desenvolvedores > div > img{
     width: 90% !important;
