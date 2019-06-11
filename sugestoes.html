@@ -31,31 +31,43 @@
         <div w3-include-html="voltar_ao_topo.html"></div>
 
         <section id="header">
-            <div id="slider" style="background-image: url('images/bondinhoSlider.jpg');">
+            <div id="slider" style="background-image: url('images/sugestao.jpg');">
                 <div id="title">
-                    <h1 style="margin: 0px">Museu do Café</h1>
-                    <p>A história de Santos com base no Café</p>
+                    <h1 style="margin: 0px">Sugestões</h1>
+                    <p>Problemas e sugestões para o centro histórico</p>
                 </div>
             </div>
-            <a class="ct-btn-scroll ct-js-btn-scroll" href="#descricao"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
+            <a class="ct-btn-scroll ct-js-btn-scroll" href="#formulario_sugestao"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
         </section>
-        <section id="descricao" class="col s12 white" style="padding: 0px">
-            <div class="col s12 m12 l6" style="padding: 21px;">
-                <h1>Museu do Café</h1>
-                <b>Localização: </b><span>Rua XV de Novembro, 95 - Centro Histórico</span><br>
-                <b>Site: </b><a href="http://www.museudocafe.org.br/" target="_blank">museudocafe.org.br</a>
-                <p>No museu do café é possível encontrar diversas exposições sobre a história de Santos, contada com base na influência que o café possuiu, tanto para o desenvolvimento da cidade, como para o desenvolvimento do país.</p>
+        <section id="formulario_sugestao" class="col s12 white">
+            <form action="#!">
                 <div class="col s12 center-align">
-                    <a class="btn-floating location-scroll" href="#localizacao"><i class="material-icons">location_on</i></a>
+                    <h2>Formulário</h2>
                 </div>
-            </div>
-            <div class="col s12 m12 l6" style="padding: 0px">
-                <img class="materialboxed" style="width: 100%; height: auto;" src="https://cronicasmacaenses.files.wordpress.com/2016/11/santos-sp-museu-do-cafe-04.jpg" alt="">
-            </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">title</i>
+                    <input id="icon_prefix" name="icon_prefix" type="text" class="validate" required>
+                    <label for="icon_prefix">Titulo</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+                    <textarea id="descricao" name="descricao" class="materialize-textarea" required></textarea>
+                    <label for="descricao">Descrição</label>
+                </div>
+                <div class="input-field col l6 s12">
+                    <select name="local" id="local" required>
+                        <option value="" disabled selected>-</option>
+                    </select>
+                    <label>Localização</label>
+                </div>
+                <div class="input-field col l6 s12">
+                    <button class="btn waves-effect waves-light" type="submit" id="submit_btn" name="action">Enviar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </form>
         </section>
-        <section id="localizacao" class="col s12 white" style="padding: 0px">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1988.4262120969981!2d-46.33105449968546!3d-23.932498010114728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce0483a06d9795%3A0x1d093fb38106a820!2sMuseu+do+Caf%C3%A9!5e0!3m2!1spt-BR!2sbr!4v1557767933470!5m2!1spt-BR!2sbr" width="100%" style="height: 100vh" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </section>
+        
 
         <!-- Include of the footer -->
         <div w3-include-html="footer.html"></div>
@@ -69,24 +81,19 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!--  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/locais.js"></script>
     <script>
         w3IncludeHTML();
         $(document).ready(function(){
             //Iniciar Menu
             $('.sidenav').sidenav();
 
-            //Inicia o "material box" (caixa de imagem com zoom)
-            $('.materialboxed').materialbox();
-
-            //Inicializar o carrosel
-            $('.carousel').carousel({
-                fullWidth: false,
-                padding: 50,
-                dist: -20
-            });
+            //Carrega as localizações
+            locaisSelect();
+            $('select').formSelect();
 
             //Controle do scroll
-            $(".ct-btn-scroll, .location-scroll").on('click', function(event) {
+            $(".ct-btn-scroll").on('click', function(event) {
                 if (this.hash !== "") {
                     event.preventDefault();
                     var hash = this.hash;

@@ -172,6 +172,11 @@ footer{
     margin-top: 0px;
 }
 
+/* Sugestões */
+#formulario_sugestao{
+    
+}
+
 /* Media Querys */
 @media only screen and (max-width: 425px){
     #title{
