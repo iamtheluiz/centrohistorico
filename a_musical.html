@@ -23,7 +23,7 @@
 <body>
 
     <!-- Page content -->
-    <div class="container">
+    <div class="container row white">
         <!-- Include of the Navbar -->
         <div w3-include-html="navbar.html"></div>
 
@@ -31,48 +31,30 @@
         <div w3-include-html="voltar_ao_topo.html"></div>
 
         <section id="header">
-            <div id="slider">
+            <div id="slider" style="background-image: url('images/bondinhoSlider.jpg');">
                 <div id="title">
-                    <h1 style="margin: 0px">Centro Histórico</h1>
-                    <p>Uma jornada pelo centro histórico de Santos</p>
+                    <h1 style="margin: 0px">A Musical</h1>
+                    <p>Loja de música com diversos clássicos disponíveis</p>
                 </div>
             </div>
-            <a class="ct-btn-scroll ct-js-btn-scroll" href="#sections"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
+            <a class="ct-btn-scroll ct-js-btn-scroll" href="#descricao"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
         </section>
-        <section id="sections">
-            <h1>Seções</h1>
-            <div class="carousel">
-                <a class="carousel-item center-align" href="mapa.html#mapa">
-                    <i class="material-icons large">map</i>
-                    <h4>Mapa</h4>
-                </a>
-                <a class="carousel-item center-align" href="locais.html">
-                    <i class="material-icons large">account_balance</i>
-                    <h4>Locais</h4>
-                </a>
-                <a class="carousel-item center-align" href="visita.html">
-                    <i class="material-icons large">public</i>
-                    <h4>Visita</h4>
-                </a>
-                <a class="carousel-item center-align" href="sugestoes.html">
-                    <i class="material-icons large">assignment</i>
-                    <h4>Sugestões</h4>
-                </a>
-                <a class="carousel-item center-align" href="galeria.html">
-                    <i class="material-icons large">photo_library</i>
-                    <h4>Galeria</h4>
-                </a>
+        <section id="descricao" class="col s12 white" style="padding: 0px">
+            <div class="col s12 m12 l6" style="padding: 21px;">
+                <h1>A Musical</h1>
+                <b>Localização: </b><span>Praça Visconde de Mauá, 26 - Centro</span><br>
+                <b>Site: </b><a href="http://www.amusicalsantos.com.br/" target="_blank">amusicalsantos.com.br</a>
+                <p>Não é somente pelo prédio ser histórico que ele não tenha relevância para história ou sua manutenção. A loja "A Musical" vende artigos clássicos de cultura multimidia.</p>
+                <div class="col s12 center-align">
+                    <a class="btn-floating location-scroll" href="#localizacao"><i class="material-icons">location_on</i></a>
+                </div>
+            </div>
+            <div class="col s12 m12 l6" style="padding: 0px">
+                <img class="materialboxed" style="width: 100%; height: auto;" src="images/a_musical.JPG" alt="">
             </div>
         </section>
-        <section id="info" class="row">
-            <div class="box col s12 m12 l8 offset-l2">
-                <div class="box-header col s12 white center-align">
-                    <h2>Informações</h2>
-                </div>
-                <div class="box-body col s12 white center-align">
-                    <p>O Centro Histórico de Santos é um local para retornar ao passado de Santos e entender melhor como as coisas eram antes da ocupação da orla da cidade, em um tempo em que toda movimentação da cidade se concentrava ali.</p>
-                </div>
-            </div>
+        <section id="localizacao" class="col s12 white" style="padding: 0px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9153.992406461972!2d-46.33171716533433!3d-23.932834839426516!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7f2659091b2b3e3a!2sA+Musical!5e0!3m2!1spt-BR!2sbr!4v1560291283582!5m2!1spt-BR!2sbr" width="100%" style="height: 100vh" frameborder="0" style="border:0" allowfullscreen></iframe>
         </section>
 
         <!-- Include of the footer -->
@@ -90,19 +72,21 @@
     <script>
         w3IncludeHTML();
         $(document).ready(function(){
-            
             //Iniciar Menu
             $('.sidenav').sidenav();
+
+            //Inicia o "material box" (caixa de imagem com zoom)
+            $('.materialboxed').materialbox();
 
             //Inicializar o carrosel
             $('.carousel').carousel({
                 fullWidth: false,
-                padding: 150,
-                dist: -100
+                padding: 50,
+                dist: -20
             });
 
             //Controle do scroll
-            $(".ct-btn-scroll").on('click', function(event) {
+            $(".ct-btn-scroll, .location-scroll").on('click', function(event) {
                 if (this.hash !== "") {
                     event.preventDefault();
                     var hash = this.hash;

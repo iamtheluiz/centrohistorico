@@ -177,6 +177,11 @@ footer{
     
 }
 
+/* Galeria */
+#galeria{
+    padding:10px;
+}
+
 /* Media Querys */
 @media only screen and (max-width: 425px){
     #title{

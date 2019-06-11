@@ -22,6 +22,12 @@ const locais = [
         "link": "teatro_guarany.html",
         "img": "https://mirada.sescsp.org.br/2014/pt/wp-content/uploads/2014/08/Teatro-Guarany-25_.jpg",
         "alt": "Teatro Guarany"
+    },
+    {
+        "nome": "A Musical",
+        "link": "a_musical.html",
+        "img": "images/a_musical.JPG",
+        "alt": "A Musical"
     }
 ]
 

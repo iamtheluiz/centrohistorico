@@ -39,39 +39,14 @@
             </div>
             <a class="ct-btn-scroll ct-js-btn-scroll" href="#sections"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
         </section>
-        <section id="sections">
+        <section id="galeria" class="white center-align">
             <h1>Seções</h1>
-            <div class="carousel">
-                <a class="carousel-item center-align" href="mapa.html#mapa">
-                    <i class="material-icons large">map</i>
-                    <h4>Mapa</h4>
-                </a>
-                <a class="carousel-item center-align" href="locais.html">
-                    <i class="material-icons large">account_balance</i>
-                    <h4>Locais</h4>
-                </a>
-                <a class="carousel-item center-align" href="visita.html">
-                    <i class="material-icons large">public</i>
-                    <h4>Visita</h4>
-                </a>
-                <a class="carousel-item center-align" href="sugestoes.html">
-                    <i class="material-icons large">assignment</i>
-                    <h4>Sugestões</h4>
-                </a>
-                <a class="carousel-item center-align" href="galeria.html">
-                    <i class="material-icons large">photo_library</i>
-                    <h4>Galeria</h4>
-                </a>
-            </div>
-        </section>
-        <section id="info" class="row">
-            <div class="box col s12 m12 l8 offset-l2">
-                <div class="box-header col s12 white center-align">
-                    <h2>Informações</h2>
-                </div>
-                <div class="box-body col s12 white center-align">
-                    <p>O Centro Histórico de Santos é um local para retornar ao passado de Santos e entender melhor como as coisas eram antes da ocupação da orla da cidade, em um tempo em que toda movimentação da cidade se concentrava ali.</p>
-                </div>
+            <div id="myGallery">
+                <img src="https://www.juicysantos.com.br/wp-content/uploads/2014/04/museu-do-caf%C3%A9-santos.jpg">
+                <img src="http://fastlife.fastshop.com.br/wp-content/uploads/2017/05/o-museu-800x1024-1-1.jpg">
+                <img src="https://www.juicysantos.com.br/wp-content/uploads/2014/04/museu-do-caf%C3%A9-santos.jpg">
+                <img src="https://www.juicysantos.com.br/wp-content/uploads/2014/04/museu-do-caf%C3%A9-santos.jpg">
+                <img src="https://www.juicysantos.com.br/wp-content/uploads/2014/04/museu-do-caf%C3%A9-santos.jpg">
             </div>
         </section>
 
@@ -87,6 +62,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!--  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/jquery.balanced-gallery.min.js"></script>
     <script>
         w3IncludeHTML();
         $(document).ready(function(){
@@ -94,12 +70,7 @@
             //Iniciar Menu
             $('.sidenav').sidenav();
 
-            //Inicializar o carrosel
-            $('.carousel').carousel({
-                fullWidth: false,
-                padding: 150,
-                dist: -100
-            });
+            $('#myGallery').BalancedGallery({ autoResize: true,background: '#DDD', padding: 10, maintainOrder: false});
 
             //Controle do scroll
             $(".ct-btn-scroll").on('click', function(event) {
