@@ -83,7 +83,7 @@
             ["Prédio histórico", "https://cdn.diariodolitoral.com.br/upload/dn_noticia/2017/02/1487454777.jpg"],
             ["Estação do Valongo", "https://i.pinimg.com/originals/03/f4/53/03f45332a6a79488e52fc90a2ac430dd.jpg"],
             ["Bondinho", "https://ondeficaremsuaviagem.com/wp-content/uploads/2017/01/FIG-24.jpg"],
-            ["Cadeia Velha", "http://wagnerwoelke.com.br/wp-content/uploads/2018/06/Z-pagu-centro.jpg"]
+            ["Cadeia Velha", "https://santosturismo.files.wordpress.com/2013/04/cadeia-velha.jpg"]
         ];
 
         images.forEach(image => {
@@ -190,6 +190,37 @@
                     $('#subirTopo').fadeOut();
                 }
             });
+
+            /* Controles com o mouse para apresentação */
+            var sections = ["header", "gamma-container"];
+            section = 0;
+
+            //Ações do mouse
+            function detectLeftButton(evt) {
+                evt = evt || window.event;
+                var button = evt.which || evt.button;
+
+                if(button == 5){
+                    section++;
+                    console.log(section);
+                    $('html, body').animate({
+                        scrollTop: $("#"+sections[section]).offset().top
+                    }, 800, function(){
+                        window.location.hash = sections[section];
+                    });
+                }else if(button == 4){
+                    section--;
+                    console.log(section);
+                    $('html, body').animate({
+                        scrollTop: $("#"+sections[section]).offset().top
+                    }, 800, function(){
+                        window.location.hash = sections[section];
+                    });
+                }
+                console.log(button);
+            }
+
+            window.onmousedown = detectLeftButton;
         });
     </script>
 </body>
