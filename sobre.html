@@ -156,6 +156,37 @@
                     $('#subirTopo').fadeOut();
                 }
             });
+
+            /* Controles com o mouse para apresentação */
+            var sections = ["header", "empresa", "valores", "grupo", "projeto", "link_site"];
+            section = 0;
+
+            //Ações do mouse
+            function detectLeftButton(evt) {
+                evt = evt || window.event;
+                var button = evt.which || evt.button;
+
+                if(button == 5){
+                    section++;
+                    console.log(section);
+                    $('html, body').animate({
+                        scrollTop: $("#"+sections[section]).offset().top
+                    }, 800, function(){
+                        window.location.hash = sections[section];
+                    });
+                }else if(button == 4){
+                    section--;
+                    console.log(section);
+                    $('html, body').animate({
+                        scrollTop: $("#"+sections[section]).offset().top
+                    }, 800, function(){
+                        window.location.hash = sections[section];
+                    });
+                }
+                console.log(button);
+            }
+
+            window.onmousedown = detectLeftButton;
         });
     </script>
 </body>
