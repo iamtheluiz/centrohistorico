@@ -91,6 +91,6 @@ function locaisSelect(){
         option.setAttribute("value", local.nome);
         option.innerHTML = local.nome;
 
-        $("#local").append(option);
+        $("#nm_local").append(option);
     });
 }

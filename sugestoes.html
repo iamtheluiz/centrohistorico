@@ -40,32 +40,46 @@
             <a class="ct-btn-scroll ct-js-btn-scroll" href="#formulario_sugestao"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
         </section>
         <section id="formulario_sugestao" class="col s12 white">
-            <form action="#!">
+            <form action="#!" id="sugestao_form">
                 <div class="col s12 center-align">
                     <h2>Formulário</h2>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix">title</i>
-                    <input id="icon_prefix" name="icon_prefix" type="text" class="validate" required>
-                    <label for="icon_prefix">Titulo</label>
+                    <input id="nm_sugestao" name="nm_sugestao" type="text" class="validate" required>
+                    <label for="nm_sugestao">Titulo</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix">assignment</i>
-                    <textarea id="descricao" name="descricao" class="materialize-textarea" required></textarea>
-                    <label for="descricao">Descrição</label>
+                    <textarea id="ds_sugestao" name="ds_sugestao" class="materialize-textarea" required></textarea>
+                    <label for="ds_sugestao">Descrição</label>
                 </div>
                 <div class="input-field col l6 s12">
-                    <select name="local" id="local" required>
+                    <select name="nm_local" id="nm_local" required>
                         <option value="" disabled selected>-</option>
                     </select>
                     <label>Localização</label>
                 </div>
                 <div class="input-field col l6 s12">
-                    <button class="btn waves-effect waves-light" type="submit" id="submit_btn" name="action">Enviar
+                    <a class="btn waves-effect waves-light" id="submit_btn" onclick="addSugestao()" name="action">Enviar
                         <i class="material-icons right">send</i>
-                    </button>
+                    </a>
                 </div>
             </form>
+        </section>
+        <section id="sugestoes" class="col s12 white">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Descrição</th>
+                        <th>Local</th>
+                    </tr>
+                </thead>
+                <tbody id="sugestoes_field">
+
+                </tbody>
+            </table>
         </section>
         
 
@@ -83,6 +97,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/locais.js"></script>
     <script>
+
+        var s_field = document.getElementById("sugestoes_field");
+
+        function addSugestao(){
+            var nm_sugestao = document.getElementById("nm_sugestao");
+            var ds_sugestao = document.getElementById("ds_sugestao");
+            var nm_local = document.getElementById("nm_local");
+
+            var tr = document.createElement("tr");
+            var titulo = document.createElement("td");
+            titulo.innerHTML = nm_sugestao.value;
+            var descricao = document.createElement("td");
+            descricao.innerHTML = ds_sugestao.value;
+            var local = document.createElement("td");
+            local.innerHTML = nm_local.value;
+
+            tr.append(titulo);
+            tr.append(descricao);
+            tr.append(local);
+
+            s_field.append(tr);
+        }
+
         w3IncludeHTML();
         $(document).ready(function(){
             //Iniciar Menu
@@ -104,8 +141,6 @@
                     });
                 } 
             });
-
-            //Pega os dados do formulário
 
             //Scroll Top
             $(window).scroll(function(){
