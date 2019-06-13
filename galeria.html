@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Centro Histórico de Santos</title>
+	<title>Galeria | Centro Histórico de Santos</title>
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#000">
-    <meta name="description" content="Site sobre o centro histórico de Santos">
+	<meta name="description" content="Galeria | Centro Histórico de Santos"/>
     <meta name="keywords" content="Centro,Histórico,Santos,Hitória,Café,Museu,Teatro">
     <meta name="author" content="Luiz Gustavo da Silva Vasconcellos">
     <!-- Roboto -->
@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- CSS Geral -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Galeria -->
+	<link rel="stylesheet" type="text/css" href="GammaGallery/css/style.css"/>
+	<script src="GammaGallery/js/modernizr.custom.70736.js"></script>
+	<noscript><link rel="stylesheet" type="text/css" href="GammaGallery/css/noJS.css"/></noscript>
+	<!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 </head>
 <body>
 
@@ -33,22 +38,22 @@
         <section id="header">
             <div id="slider">
                 <div id="title">
-                    <h1 style="margin: 0px">Centro Histórico</h1>
-                    <p>Uma jornada pelo centro histórico de Santos</p>
+                    <h1 style="margin: 0px">Galeria</h1>
+                    <p>Diversas fotos para você admirar o Centro Histórico de Santos</p>
                 </div>
             </div>
-            <a class="ct-btn-scroll ct-js-btn-scroll" href="#sections"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
-        </section>
-        <section id="galeria" class="white center-align">
-            <h1>Seções</h1>
-            <div id="myGallery">
-                <img src="https://www.juicysantos.com.br/wp-content/uploads/2014/04/museu-do-caf%C3%A9-santos.jpg">
-                <img src="http://fastlife.fastshop.com.br/wp-content/uploads/2017/05/o-museu-800x1024-1-1.jpg">
-                <img src="https://www.juicysantos.com.br/wp-content/uploads/2014/04/museu-do-caf%C3%A9-santos.jpg">
-                <img src="https://www.juicysantos.com.br/wp-content/uploads/2014/04/museu-do-caf%C3%A9-santos.jpg">
-                <img src="https://www.juicysantos.com.br/wp-content/uploads/2014/04/museu-do-caf%C3%A9-santos.jpg">
-            </div>
-        </section>
+            <a class="ct-btn-scroll ct-js-btn-scroll" href="#gamma-container"><img alt="Arrow Down Icon" src="images/arrow-down.png"></a>
+		</section>
+		<section class="gamma-container gamma-loading white" id="gamma-container" style="padding: 17px;">
+
+			<ul class="gamma-gallery" id="galeria_gamma">
+
+
+			</ul>
+
+			<div class="gamma-overlay"></div>
+
+		</section>
 
         <!-- Include of the footer -->
         <div w3-include-html="footer.html"></div>
@@ -59,10 +64,97 @@
     <!-- W3Data -->
     <script src="https://www.w3schools.com/lib/w3data.js"></script>
     <!-- Jquery 3.4.1 -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/jquery.balanced-gallery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="GammaGallery/js/jquery.masonry.min.js"></script>
+	<script src="GammaGallery/js/js-url.min.js"></script>
+	<script src="GammaGallery/js/jquerypp.custom.js"></script>
+	<script src="GammaGallery/js/gamma.js"></script>
+    <script type="text/javascript">
+
+        var images = [
+            ["Museu do Café", "https://www.juicysantos.com.br/wp-content/uploads/2014/04/museu-do-caf%C3%A9-santos.jpg"],
+            ["Bondinho de Santos", "https://abrilviagemeturismo.files.wordpress.com/2016/12/santos.jpg?quality=70&strip=info&w=680&h=453&crop=1"],
+            ["Frente do Museu do Café", "https://www.contandodestinos.com/wp-content/uploads/2016/01/Bonde2Bde2BSantos2B3-1.jpg"],
+            ["Passeio de Bondinho", "https://www.porondeandamos.com/wp-content/uploads/2014/12/bonde-centro-hist%C3%B3rico-Santos.jpg"],
+            ["Foto do teto da bolsa do café", "images/sugestao.jpg"],
+            ["Prédio histórico", "https://cdn.diariodolitoral.com.br/upload/dn_noticia/2017/02/1487454777.jpg"],
+            ["Estação do Valongo", "https://i.pinimg.com/originals/03/f4/53/03f45332a6a79488e52fc90a2ac430dd.jpg"],
+            ["Bondinho", "https://ondeficaremsuaviagem.com/wp-content/uploads/2017/01/FIG-24.jpg"],
+            ["Cadeia Velha", "http://wagnerwoelke.com.br/wp-content/uploads/2018/06/Z-pagu-centro.jpg"]
+        ];
+
+        images.forEach(image => {
+
+            var div = "";
+            div += '<li>'
+            div += '<div data-alt="'+image[0]+'" data-description="<h3>'+image[0]+'</h3>" data-max-width="1800" data-max-height="1350">';
+            div += '<div data-src="'+image[1]+'" data-min-width="1300"></div>';
+            div += '<div data-src="'+image[1]+'" data-min-width="1000"></div>';
+            div += '<div data-src="'+image[1]+'" data-min-width="700"></div>';
+            div += '<div data-src="'+image[1]+'" data-min-width="300"></div>';
+            div += '<div data-src="'+image[1]+'" data-min-width="200"></div>';
+            div += '<div data-src="'+image[1]+'" data-min-width="140"></div>';
+            div += '<div data-src="'+image[1]+'"></div>';
+            div += '<noscript><img src="'+image[1]+'" alt="'+image[0]+'"/></noscript></div></li>';
+
+            document.getElementById("galeria_gamma").innerHTML += div;
+        });
+    
+		$(function() {
+
+
+			var GammaSettings = {
+					// order is important!
+					viewport : [ {
+						width : 1200,
+						columns : 5
+					}, {
+						width : 900,
+						columns : 4
+					}, {
+						width : 500,
+						columns : 3
+					}, { 
+						width : 320,
+						columns : 2
+					}, { 
+						width : 0,
+						columns : 2
+					} ]
+			};
+
+			Gamma.init( GammaSettings, fncallback );
+
+
+			// Example how to add more items (just a dummy):
+
+			function fncallback() {
+
+				$( '#loadmore' ).show().on( 'click', function() {
+
+					++page;
+					var newitems = items[page-1]
+					if( page <= 1 ) {
+						
+						Gamma.add( $( newitems ) );
+
+					}
+					if( page === 1 ) {
+
+						$( this ).remove();
+
+					}
+
+				} );
+
+			}
+
+		});
+
+	</script>
     <script>
         w3IncludeHTML();
         $(document).ready(function(){
@@ -70,7 +162,12 @@
             //Iniciar Menu
             $('.sidenav').sidenav();
 
-            $('#myGallery').BalancedGallery({ autoResize: true,background: '#DDD', padding: 10, maintainOrder: false});
+            //Inicializar o carrosel
+            $('.carousel').carousel({
+                fullWidth: false,
+                padding: 150,
+                dist: -100
+            });
 
             //Controle do scroll
             $(".ct-btn-scroll").on('click', function(event) {

@@ -178,8 +178,8 @@ footer{
 }
 
 /* Galeria */
-#galeria{
-    padding:10px;
+#gamma-container .gamma-nav{
+    background-color: black !important;
 }
 
 /* Media Querys */

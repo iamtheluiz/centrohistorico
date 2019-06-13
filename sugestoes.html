@@ -42,7 +42,7 @@
         <section id="formulario_sugestao" class="col s12 white">
             <form action="#!" id="sugestao_form">
                 <div class="col s12 center-align">
-                    <h2>Formulário</h2>
+                    <h2 onclick="rodar()">Formulário</h2>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix">title</i>
@@ -77,7 +77,11 @@
                     </tr>
                 </thead>
                 <tbody id="sugestoes_field">
-
+                    <tr>
+                        <td>Sugestão ao museu do café</td>
+                        <td>Talvez possa ser interessante simular uma produção de café, seria entusiasmante!</td>
+                        <td>Museu do Café</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
@@ -97,6 +101,64 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/locais.js"></script>
     <script>
+            
+        function autocomplete(campo,valor){
+            //pega o input a ser preenchido
+            var elem = document.getElementById(campo);
+            //divide a string valor para o efeito de digitação
+            var valor_separado = valor.split('');
+
+            //coloca o input em foco (para o materialize funcionar)
+            elem.focus();
+            //elem.value = "";
+
+            function digitar(){
+                var l = valor_separado.length;
+                var i = 0;
+                var id = setInterval(frame, 50);
+                function frame() {
+                    if(i == l){
+                        clearInterval(id);
+                    }
+                    else{
+                        elem.value += valor_separado[i];
+                        i++;
+                    }
+                }
+            }
+            setTimeout(digitar, 500);     
+        }
+
+        var values = [];
+
+        for (var x = 0; x < 4; x++) {
+            values[x] = [];
+        }
+
+        values[0][0] = "nm_sugestao";
+        values[0][1] = "Prédio com problemas estruturais";
+
+        values[1][0] = "ds_sugestao";
+        values[1][1] = "Existe um prédio na Rua Central que apresenta riscos para a população";
+
+        function rodar(){
+            var c = 0;
+            var l = values.length;
+            var s = 1000
+
+            var id = setInterval(frame, s);
+            function frame() {
+                if(c == l){
+                    clearInterval(id);
+                    console.log('foi');
+                }
+                else{
+                    autocomplete(values[c][0],values[c][1]);
+                    s = (values[c][1].length)*200;
+                    c++;
+                }
+            }
+        }
 
         var s_field = document.getElementById("sugestoes_field");
 
@@ -118,6 +180,9 @@
             tr.append(local);
 
             s_field.append(tr);
+
+            nm_sugestao.value = "";
+            ds_sugestao.value = "";
         }
 
         w3IncludeHTML();
